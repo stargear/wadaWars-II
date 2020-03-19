@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private Image uiHeart;
     private Image uiBD;
     private Image uiCharge;
-
+    public  int powerUpIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -323,6 +323,9 @@ public class PlayerController : MonoBehaviour
         // Lose a life
         life--;
 
+
+
+
         // Check if enough life is available
         if (life <= 0)
         {
@@ -330,6 +333,12 @@ public class PlayerController : MonoBehaviour
             PlayerDies();
             yield return null;
         }
+
+        if (index == 0) { PlayerPrefs.SetInt("player_1_life",life); }
+        else if (index == 1) { PlayerPrefs.SetInt("player_2_life", life); }
+        else if (index == 2) { PlayerPrefs.SetInt("player_3_life", life); }
+        else if (index == 3) { PlayerPrefs.SetInt("player_4_life", life); }
+
 
         // Deactivate input
         /*input.DeactivateInput();
@@ -446,14 +455,22 @@ public class PlayerController : MonoBehaviour
     {
         var playerPoints = PlayerPrefsX.GetIntArray("PlayerPoints");
         playerPoints[index]++;
+
         PlayerPrefsX.SetIntArray("PlayerPoints", playerPoints);
+
+
+        if (index == 0) { PlayerPrefs.SetInt("player_1_points", playerPoints[index]); }
+        else if (index == 1) { PlayerPrefs.SetInt("player_2_points", playerPoints[index]); }
+        else if (index == 2) { PlayerPrefs.SetInt("player_3_points", playerPoints[index]); }
+        else if (index == 3) { PlayerPrefs.SetInt("player_4_points", playerPoints[index]); }
+
 
         if (playerPoints[index] >= LevelManager.Instance.pointsToWin)
         {
             // Player wins whole game
             // Load TableOfPoints scene
             //LevelManager.Instance.LoadScene("TableOfPoints");
-            LevelManager.Instance.LoadScene("MenuScene");
+            LevelManager.Instance.LoadScene("TableOfPoints");
         } 
         else
         {
@@ -465,6 +482,10 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+      //  powerUpIndex++;
+
+
+
         if (other.gameObject.layer == 4) //if you hit water
         {
             //display on canvas that you lost a life!
@@ -476,6 +497,9 @@ public class PlayerController : MonoBehaviour
 
             //after time, the player is respawned somewhere..
         }
+
+
+    
     }
 
     private void OnCollisionEnter(Collision collision)

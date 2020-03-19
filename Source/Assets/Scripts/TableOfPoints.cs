@@ -18,13 +18,36 @@ public class TableOfPoints : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
+
+
+        int player1life = PlayerPrefs.GetInt("player_1_life");
+        int player1points = PlayerPrefs.GetInt("player_1_points");
+        int player1Up = PlayerPrefs.GetInt("player_1_PowerUps");
+
+        int player2life = PlayerPrefs.GetInt("player_2_life");
+        int player2points = PlayerPrefs.GetInt("player_2_points");
+        int player2Up = PlayerPrefs.GetInt("player_2_PowerUps");
+
+        int player3life = PlayerPrefs.GetInt("player_3_life");
+        int player3points = PlayerPrefs.GetInt("player_3_points");
+        int player3Up = PlayerPrefs.GetInt("player_3_PowerUps");
+
+        int player4life = PlayerPrefs.GetInt("player_4_life");
+        int player4points = PlayerPrefs.GetInt("player_4_points");
+        int player4Up = PlayerPrefs.GetInt("player_4_PowerUps");
+
+
+
         highscoreEntryList = new List<HighscoreEntry>()
         {
-            new HighscoreEntry{ kills = 7, name = "Dani", powerups = 2, time = 1},
-            new HighscoreEntry{ kills = 13, name = "Alex", powerups = 3, time = 0},
-            new HighscoreEntry{ kills = 9, name = "Kegen", powerups = 4, time = 3},
-            new HighscoreEntry{ kills = 11, name = "Phillip", powerups = 5, time = 2},
+           // PlayerPrefs.SetInt("player_1_points");
+            new HighscoreEntry{ kills = player1points, name = "Player 1", powerups = player1Up, time = 1},
+            new HighscoreEntry{ kills = player2points, name = "Player 2", powerups = player2Up, time = 0},
+            new HighscoreEntry{ kills = player3points, name = "Player 3", powerups = player3Up, time = 3},
+            new HighscoreEntry{ kills = player4points, name = "Player 4", powerups = player4Up, time = 2},
         };
+
+        //we rename powerups 
 
         //Sort entry list by Score
         // Players are now sorted bei highet to Lowest points

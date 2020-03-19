@@ -28,7 +28,20 @@ public class PowerUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Collider myCollider = this.GetComponent<Collider>();
+            myCollider.enabled = false;
+
+            PlayerController controller = other.GetComponent<PlayerController>();
+            controller.powerUpIndex++;
+
+            if (controller.index == 0) { PlayerPrefs.SetInt("player_1_PowerUps", controller.powerUpIndex); }
+            else if (controller.index == 1) { PlayerPrefs.SetInt("player_2_PowerUps", controller.powerUpIndex); }
+            else if (controller.index == 2) { PlayerPrefs.SetInt("player_3_PowerUps", controller.powerUpIndex); }
+            else if (controller.index == 3) { PlayerPrefs.SetInt("player_4_PowerUps", controller.powerUpIndex); }
+
             StartCoroutine(Pickup(other));
+            Destroy(gameObject);
+
         }
     }
 
@@ -72,6 +85,7 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+  
 
     IEnumerator Pickup(Collider player)
     {
@@ -81,6 +95,7 @@ public class PowerUp : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         //gameObject.SetActive(false); // Statt collider & meschrenderer
 
+       
 
         switch (powerTypes)
         {
@@ -124,7 +139,6 @@ public class PowerUp : MonoBehaviour
                 break;
         }
 
-        Destroy(gameObject);
 
     }
 }

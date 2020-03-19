@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4101035289070461885}
   - component: {fileID: 4101035289070461884}
   - component: {fileID: 138044274594992277}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PowerUp
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerTypes: 0
-  powerSpawner: 10
   rend: {fileID: 0}
   mat1: {fileID: 2100000, guid: c13223e29317570499eb7974738a0af9, type: 2}
   mat2: {fileID: 2100000, guid: 3eccfe1a5fb99244c85ad422e755fd7f, type: 2}
