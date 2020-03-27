@@ -42,14 +42,25 @@ public class PlayerController : MonoBehaviour
     private GameObject heartIcon;
     private GameObject backdrop;
     private GameObject chargeImage;
-
+    private GameObject powerUpImage;
 
     private Text uiName;
     private Text uiLife;
     private Image uiHeart;
     private Image uiBD;
     private Image uiCharge;
-    public  int powerUpIndex = 0;
+    private Image uiPowerUp;
+
+    public Sprite pwrUp1;
+    public Sprite pwrUp2;
+    public Sprite pwrUp3;
+    public Sprite pwrUp4;
+    public Sprite pwrUp5; //no powerup, black image
+
+    public int powerUpIndex = 0;
+    public int currentPowerUp = 0; //0=no powerup
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -384,6 +395,7 @@ public class PlayerController : MonoBehaviour
                 chargeImage = GameObject.Find("charge1");
                 UI_name = GameObject.Find("Text1");
                 UI_life = GameObject.Find("lifeText1");
+                powerUpImage = GameObject.Find("pwrUp1");
                 break;
             case 1:
                 //this is player 1
@@ -393,6 +405,7 @@ public class PlayerController : MonoBehaviour
                 chargeImage = GameObject.Find("charge2");
                 UI_name = GameObject.Find("Text2");
                 UI_life = GameObject.Find("lifeText2");
+                powerUpImage = GameObject.Find("pwrUp2");
                 //playerIndexColor = new Color(255, 35, 38); // red
                 break;
             case 2:
@@ -403,6 +416,7 @@ public class PlayerController : MonoBehaviour
                 chargeImage = GameObject.Find("charge3");
                 UI_name = GameObject.Find("Text3");
                 UI_life = GameObject.Find("lifeText3");
+                powerUpImage = GameObject.Find("pwrUp3");
                 //playerIndexColor = new Color(47, 188, 3); // green
                 break;
             case 3:
@@ -413,6 +427,7 @@ public class PlayerController : MonoBehaviour
                 chargeImage = GameObject.Find("charge4");
                 UI_name = GameObject.Find("Text4");
                 UI_life = GameObject.Find("lifeText4");
+                powerUpImage = GameObject.Find("pwrUp4");
                 //playerIndexColor = new Color(216, 217, 48); // yellow
                 break;
         }
@@ -425,19 +440,65 @@ public class PlayerController : MonoBehaviour
         uiCharge = chargeImage.GetComponent<Image>();
         uiLife = UI_life.GetComponent<Text>();
         uiName = UI_name.GetComponent<Text>();
+        uiPowerUp = powerUpImage.GetComponent<Image>();
 
         uiHeart.enabled = true;
         uiBD.enabled = true;
         uiCharge.enabled = true;
         uiLife.enabled = true;
         uiName.enabled = true;
+        uiPowerUp.enabled = true;
 
+        //we change the power ups image at runtime
+
+        switch (currentPowerUp)
+        {
+            case 0:
+                uiPowerUp.sprite = pwrUp5;
+                break;
+            case 1:
+                uiPowerUp.sprite = pwrUp1;
+                break;
+            case 2:
+                uiPowerUp.sprite = pwrUp2;
+                break;
+            case 3:
+                uiPowerUp.sprite = pwrUp3;
+                break;
+            case 4:
+                uiPowerUp.sprite = pwrUp4;
+                break;
+        }
         // Set color for player
         //playerColor.GetComponent<Renderer>().material.color = playerIndexColor;
 
         // Set material to player
         playerColor.GetComponent<Renderer>().material = playerColorMaterials[index];
     }
+
+
+    public void changeSprite(int type)
+    {
+        switch (type)
+        {
+            case 0:
+                uiPowerUp.sprite = pwrUp5;
+                break;
+            case 1:
+                uiPowerUp.sprite = pwrUp1;
+                break;
+            case 2:
+                uiPowerUp.sprite = pwrUp2;
+                break;
+            case 3:
+                uiPowerUp.sprite = pwrUp3;
+                break;
+            case 4:
+                uiPowerUp.sprite = pwrUp4;
+                break;
+        }
+    }
+
 
     private void PlayerDies()
     {

@@ -286,7 +286,6 @@ MonoBehaviour:
   gunInt: 0
   hatInt: 0
   life: 3
-  points: 0
   index: 0
   playerColor: {fileID: 1619404664622927099}
   playerColorMaterials:
@@ -295,6 +294,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c3643ca7e4d677c42a4d0da19a83039c, type: 2}
   - {fileID: 2100000, guid: 415f96d4b438b7441922b8d6f2d5a156, type: 2}
   playerUI: {fileID: 0}
+  pwrUp1: {fileID: 21300000, guid: a4a7156610c399a4fa0f54489f8efa5f, type: 3}
+  pwrUp2: {fileID: 21300000, guid: db51500b27f20584c8960ca7f7e6fa04, type: 3}
+  pwrUp3: {fileID: 21300000, guid: b9ecdaf7bb3998a4a904126775986841, type: 3}
+  pwrUp4: {fileID: 21300000, guid: 308bf8b48202ee84d8b4f5e5e514f9ca, type: 3}
+  pwrUp5: {fileID: 21300000, guid: c8b63f00d9c1ec94198702f99a46b1c7, type: 3}
+  powerUpIndex: 0
+  currentPowerUp: 0
 --- !u!114 &3493050746496108140
 MonoBehaviour:
   m_ObjectHideFlags: 0

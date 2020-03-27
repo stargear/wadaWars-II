@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4101035289070461885}
   - component: {fileID: 4101035289070461884}
   - component: {fileID: 138044274594992277}
+  - component: {fileID: -2443997379782512860}
   m_Layer: 11
   m_Name: PowerUp
   m_TagString: Player
@@ -47,7 +48,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4101035289070461883}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &4101035289070461886
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3eccfe1a5fb99244c85ad422e755fd7f, type: 2}
+  - {fileID: 2100000, guid: b52a481e152147845b8616312d201b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,6 +124,104 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerTypes: 0
   rend: {fileID: 0}
-  mat1: {fileID: 2100000, guid: c13223e29317570499eb7974738a0af9, type: 2}
-  mat2: {fileID: 2100000, guid: 3eccfe1a5fb99244c85ad422e755fd7f, type: 2}
-  mat3: {fileID: 2100000, guid: 4c29bf9e50f7f6447880814f3b509784, type: 2}
+  mat1: {fileID: 2100000, guid: 4c29bf9e50f7f6447880814f3b509784, type: 2}
+  mat2: {fileID: 2100000, guid: c13223e29317570499eb7974738a0af9, type: 2}
+  mat3: {fileID: 2100000, guid: e9c35cdcc23d4da44b66c1000ed22ecd, type: 2}
+  mat4: {fileID: 2100000, guid: 986e5c73b57bb184e93be74e5c3b936d, type: 2}
+  mat5: {fileID: 2100000, guid: 3eccfe1a5fb99244c85ad422e755fd7f, type: 2}
+--- !u!82 &-2443997379782512860
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101035289070461883}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 52dee47319fbb62439467368ab82c4fe, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
